@@ -1,0 +1,25 @@
+# Sameer Singh Chouhan — Portfolio Website
+
+Personal portfolio and resume site for Sameer Singh Chouhan, FP&A Finance Professional.
+
+## 🚀 How to publish on GitHub Pages
+
+1. Create a new repository on GitHub named exactly: `yourusername.github.io`
+   - Replace `yourusername` with your actual GitHub username
+   - e.g. if your username is `sameer410`, name it `sameer410.github.io`
+
+2. Upload these files to the repository:
+   - `index.html`
+   - `Sameer_Singh_Resume.pdf`
+   - `README.md`
+
+3. Go to **Settings → Pages** in your repository
+   - Source: Deploy from a branch
+   - Branch: `main` / `root`
+   - Click Save
+
+4. Your site will be live at `https://yourusername.github.io` within a few minutes!
+
+## Files
+- `index.html` — The complete portfolio site (photos embedded)
+- `Sameer_Singh_Resume.pdf` — Resume for the download button
