@@ -2,65 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sameer Singh Chouhan | Finance & FP&A Professional | Vancouver</title>
-
-  <!-- Primary SEO -->
-  <meta name="description" content="Sameer Singh Chouhan is a Vancouver-based Finance and FP&A Professional with an MBA and 3+ years of experience in budgeting, forecasting, Power BI, and financial modelling. Currently open to finance roles in Vancouver." />
-  <meta name="keywords" content="Sameer Singh Chouhan, Sameer Chouhan, Finance Professional Vancouver, FP&A Analyst Vancouver, Financial Analyst Vancouver, MBA Finance, Power BI Analyst, CPA Candidate Vancouver" />
-  <meta name="author" content="Sameer Singh Chouhan" />
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="OlS8QBHR8V8xjkQDq9phk_CZNdu44kWMeoVsQvh7MqU" />
-  <link rel="canonical" href="https://sameer410singh.github.io/1/" />
-
-  <!-- Open Graph (LinkedIn, Facebook previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sameer410singh.github.io/1/" />
-  <meta property="og:title" content="Sameer Singh Chouhan | Finance & FP&A Professional | Vancouver" />
-  <meta property="og:description" content="Vancouver-based Finance and FP&A Professional with an MBA and 3+ years of experience. Open to finance roles across FP&A, corporate finance, and financial reporting." />
-  <meta property="og:site_name" content="Sameer Singh Chouhan" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sameer Singh Chouhan | Finance & FP&A Professional | Vancouver" />
-  <meta name="twitter:description" content="Vancouver-based Finance and FP&A Professional with an MBA and 3+ years of experience. Open to finance roles." />
-
-  <!-- Structured Data (Google rich results) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sameer Singh Chouhan",
-    "alternateName": "Sameer Chouhan",
-    "url": "https://sameer410singh.github.io/1/",
-    "email": "sameer410singh@gmail.com",
-    "telephone": "+1-236-268-5472",
-    "jobTitle": "Finance & FP&A Professional",
-    "description": "Vancouver-based Finance and FP&A Professional with an MBA and 3+ years of experience in budgeting, forecasting, variance analysis, and Power BI dashboards.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vancouver",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "alumniOf": [
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "New York Institute of Technology",
-        "description": "Master of Business Administration"
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "University of Rajasthan",
-        "description": "Bachelor of Commerce"
-      }
-    ],
-    "sameAs": [
-      "https://linkedin.com/in/sameer410"
-    ],
-    "knowsAbout": ["FP&A", "Financial Planning", "Budgeting", "Forecasting", "Power BI", "Financial Modelling", "Variance Analysis", "Corporate Finance"]
-  }
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
   </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sameer Singh Chouhan, Finance Professional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -78,6 +28,20 @@
       --text: #1e2d45;
       --muted: #5a7394;
       --border: #dce6f4;
+      --page-bg: #ffffff;
+      --card-bg: #ffffff;
+      --heading: var(--navy);
+    }
+
+    [data-theme="dark"] {
+      --blue: #7fb3ff;
+      --page-bg: #0a1220;
+      --off-white: #0f1b2e;
+      --card-bg: #101c30;
+      --text: #cbd5e1;
+      --muted: #8ba0bc;
+      --border: #223350;
+      --heading: #f1f5f9;
     }
 
     html { scroll-behavior: smooth; }
@@ -85,8 +49,9 @@
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background: var(--white);
+      background: var(--page-bg);
       overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     /* ── NAV ── */
@@ -125,7 +90,7 @@
       font-weight: 600 !important;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--accent-light) !important; color: var(--navy) !important; }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--heading) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -306,7 +271,7 @@
     .section-heading {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: var(--navy);
+      color: var(--heading);
       font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -359,7 +324,7 @@
     .award-item {
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.75rem 1rem;
-      background: white;
+      background: var(--card-bg);
       border-radius: 10px;
       border-left: 3px solid var(--gold);
       font-size: 0.9rem;
@@ -369,7 +334,7 @@
     .award-icon { font-size: 1.1rem; }
 
     /* ── EXPERIENCE ── */
-    #experience { background: white; }
+    #experience { background: var(--page-bg); }
     .timeline { position: relative; padding-left: 2rem; }
     .timeline::before {
       content: '';
@@ -403,7 +368,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--heading);
     }
     .exp-date {
       font-size: 0.8rem;
@@ -448,7 +413,7 @@
       gap: 1.5rem;
     }
     .skill-card {
-      background: white;
+      background: var(--card-bg);
       border-radius: 16px;
       padding: 1.75rem;
       border: 1px solid var(--border);
@@ -459,7 +424,7 @@
     .skill-card-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
-      color: var(--navy);
+      color: var(--heading);
       font-weight: 600;
       margin-bottom: 1rem;
     }
@@ -480,7 +445,7 @@
     }
 
     /* ── EDUCATION ── */
-    #education { background: white; }
+    #education { background: var(--page-bg); }
     .edu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -503,7 +468,7 @@
     .edu-degree {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
-      color: var(--navy);
+      color: var(--heading);
       font-weight: 600;
       margin-bottom: 0.3rem;
     }
@@ -596,7 +561,7 @@
     .contact-link {
       display: flex; align-items: center; gap: 1rem;
       padding: 1rem 1.25rem;
-      background: white;
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
       text-decoration: none;
@@ -606,21 +571,21 @@
     .contact-link:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(59,130,246,0.1); }
     .contact-link-icon { font-size: 1.3rem; width: 40px; text-align: center; }
     .contact-link-label { font-size: 0.78rem; color: var(--muted); }
-    .contact-link-value { font-weight: 600; font-size: 0.92rem; color: var(--navy); }
+    .contact-link-value { font-weight: 600; font-size: 0.92rem; color: var(--heading); }
     .location-note {
       font-size: 0.88rem;
       color: var(--muted);
       margin-top: 1.5rem;
       line-height: 1.6;
       padding: 1rem;
-      background: white;
+      background: var(--card-bg);
       border-radius: 10px;
       border-left: 3px solid var(--accent);
     }
     .contact-right h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
-      color: var(--navy);
+      color: var(--heading);
       margin-bottom: 1rem;
     }
     .contact-right p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
@@ -655,6 +620,44 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.3s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); transform: rotate(20deg); }
+
+    /* ── ACTIVE NAV LINK ── */
+    .nav-links a.active { color: var(--accent-light); }
+
+    /* ── TYPEWRITER ── */
+    .type-cursor {
+      display: inline-block;
+      margin-left: 2px;
+      color: var(--gold);
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── SKILL TAG HOVER ── */
+    .skill-tag {
+      transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      cursor: default;
+    }
+    .skill-tag:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -668,6 +671,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="theme-icon">🌙</span></button></li>
   </ul>
 </nav>
 
@@ -677,7 +681,7 @@
     <div>
       <div class="hero-eyebrow">Open to Finance Roles in Vancouver</div>
       <h1>Sameer Singh<br><span>Chouhan</span></h1>
-      <div class="hero-title">Finance &amp; FP&amp;A Professional · MBA · CPA Candidate</div>
+      <div class="hero-title"><span id="typed-role"></span><span class="type-cursor">|</span></div>
       <p class="hero-bio">
         I turn financial data into decisions that matter. With 3+ years across FP&amp;A, corporate finance, 
         and commercial real estate, I build the models, dashboards, and partnerships that help organizations 
@@ -685,23 +689,23 @@
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Let's Connect</a>
-        <a href="Sameer Singh Resume.pdf" download="Sameer_Singh_Resume.pdf" class="btn-secondary">⬇ Download Resume</a>
+        <a href="Sameer_Singh_Resume.pdf" download class="btn-secondary">⬇ Download Resume</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="stat-num">3+</div>
+          <div class="stat-num" data-target="3" data-suffix="+">0</div>
           <div class="stat-label">Years FP&amp;A Experience</div>
         </div>
         <div>
-          <div class="stat-num">5</div>
+          <div class="stat-num" data-target="5">0</div>
           <div class="stat-label">Companies</div>
         </div>
         <div>
-          <div class="stat-num">$30K+</div>
+          <div class="stat-num" data-target="30" data-prefix="$" data-suffix="K+">$0K+</div>
           <div class="stat-label">Discrepancies Resolved</div>
         </div>
         <div>
-          <div class="stat-num">8 hrs</div>
+          <div class="stat-num" data-target="8" data-suffix=" hrs">0</div>
           <div class="stat-label">Saved Per Week</div>
         </div>
       </div>
@@ -742,7 +746,7 @@
           I'm currently a Finance Associate at Royal Pacific Group, where I build financial models 
           for commercial real estate acquisitions. Before that, I was an FP&amp;A Analyst at NYIT, where 
           I managed cross-entity close cycles and built Power BI dashboards used by 6–8 departments. 
-          I also hold experience from JPMorgan Chase (Mumbai), Finova Capital (Mumbai), and Auto Pulse India (Jaipur).
+          I also hold experience from JPMorgan Chase, Finova Capital, and Auto Pulse India.
         </p>
         <p>
           I'm currently pursuing my CPA designation and actively looking for my next FP&amp;A opportunity 
@@ -771,9 +775,9 @@
       <h2 class="section-heading">Experience</h2>
       <p class="section-sub">A progressive track record across FP&amp;A, commercial real estate, institutional finance, and fintech.</p>
     </div>
-    <div class="timeline fade-in">
+    <div class="timeline">
 
-      <div class="timeline-item">
+      <div class="timeline-item fade-in" style="transition-delay: 0s">
         <div class="exp-header">
           <div class="exp-role">Finance Associate</div>
           <div class="exp-date">Jan 2026 – Present</div>
@@ -786,7 +790,7 @@
         </ul>
       </div>
 
-      <div class="timeline-item">
+      <div class="timeline-item fade-in" style="transition-delay: 0.08s">
         <div class="exp-header">
           <div class="exp-role">FP&amp;A Analyst</div>
           <div class="exp-date">Jan 2025 – Jan 2026</div>
@@ -800,7 +804,7 @@
         </ul>
       </div>
 
-      <div class="timeline-item">
+      <div class="timeline-item fade-in" style="transition-delay: 0.16s">
         <div class="exp-header">
           <div class="exp-role">Finance Analyst</div>
           <div class="exp-date">Sept 2023 – Aug 2024</div>
@@ -813,9 +817,9 @@
         </ul>
       </div>
 
-      <div class="timeline-item">
+      <div class="timeline-item fade-in" style="transition-delay: 0.24s">
         <div class="exp-header">
-          <div class="exp-role">Financial Operations Analyst</div>
+          <div class="exp-role">Financial Operations Associate</div>
           <div class="exp-date">May 2022 – Aug 2023</div>
         </div>
         <div class="exp-company">Finova Capital · Mumbai, India</div>
@@ -826,7 +830,7 @@
         </ul>
       </div>
 
-      <div class="timeline-item">
+      <div class="timeline-item fade-in" style="transition-delay: 0.32s">
         <div class="exp-header">
           <div class="exp-role">Finance Intern</div>
           <div class="exp-date">Feb 2022 – Apr 2022</div>
@@ -850,8 +854,8 @@
       <h2 class="section-heading">Skills &amp; Tools</h2>
       <p class="section-sub">A full-stack finance skillset, from strategic planning down to the reconciliation level.</p>
     </div>
-    <div class="skills-grid fade-in">
-      <div class="skill-card">
+    <div class="skills-grid">
+      <div class="skill-card fade-in" style="transition-delay: 0s">
         <div class="skill-card-icon">📊</div>
         <div class="skill-card-title">FP&amp;A Core</div>
         <div class="skill-tags">
@@ -863,7 +867,7 @@
           <span class="skill-tag">Strategic Planning</span>
         </div>
       </div>
-      <div class="skill-card">
+      <div class="skill-card fade-in" style="transition-delay: 0.08s">
         <div class="skill-card-icon">🛠️</div>
         <div class="skill-card-title">Tools &amp; Technology</div>
         <div class="skill-tags">
@@ -875,7 +879,7 @@
           <span class="skill-tag">Scenario Planning</span>
         </div>
       </div>
-      <div class="skill-card">
+      <div class="skill-card fade-in" style="transition-delay: 0.16s">
         <div class="skill-card-icon">🤝</div>
         <div class="skill-card-title">Business Partnering</div>
         <div class="skill-tags">
@@ -885,7 +889,7 @@
           <span class="skill-tag">Department Budgeting</span>
         </div>
       </div>
-      <div class="skill-card">
+      <div class="skill-card fade-in" style="transition-delay: 0.24s">
         <div class="skill-card-icon">⚙️</div>
         <div class="skill-card-title">Process &amp; Controls</div>
         <div class="skill-tags">
@@ -907,14 +911,14 @@
       <div class="section-tag">Academic Background</div>
       <h2 class="section-heading">Education</h2>
     </div>
-    <div class="edu-grid fade-in">
-      <div class="edu-card">
+    <div class="edu-grid">
+      <div class="edu-card fade-in" style="transition-delay: 0s">
         <div class="edu-degree">Master of Business Administration</div>
         <div class="edu-school">New York Institute of Technology</div>
         <div class="edu-meta">2024 – 2025 · Management</div>
         <span class="edu-gpa">GPA: 3.5 / 4.0</span>
       </div>
-      <div class="edu-card">
+      <div class="edu-card fade-in" style="transition-delay: 0.1s">
         <div class="edu-degree">Bachelor of Commerce</div>
         <div class="edu-school">University of Rajasthan</div>
         <div class="edu-meta">2019 – 2022</div>
@@ -925,32 +929,22 @@
     <div style="margin-top: 3rem;" class="fade-in">
       <div class="section-tag">Certifications</div>
       <div class="cert-list">
-        <div class="cert-item">
+        <div class="cert-item fade-in" style="transition-delay: 0s">
           <span class="cert-icon">📋</span>
           <span>Certified Public Accountant (CPA)</span>
           <span class="cert-status progress">In Progress</span>
         </div>
-        <div class="cert-item">
-          <span class="cert-icon">📊</span>
-          <span>Financial Modeling &amp; Valuation Analyst (FMVA, CFI)</span>
-          <span class="cert-status active">Certified</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-icon">🔍</span>
-          <span>Google Data Analytics Certificate</span>
-          <span class="cert-status active">Certified</span>
-        </div>
-        <div class="cert-item">
+        <div class="cert-item fade-in" style="transition-delay: 0.08s">
           <span class="cert-icon">📈</span>
           <span>Fundamental Data Analytics in Excel (CFI)</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item">
+        <div class="cert-item fade-in" style="transition-delay: 0.16s">
           <span class="cert-icon">💳</span>
           <span>Future of Payment Technologies</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item">
+        <div class="cert-item fade-in" style="transition-delay: 0.24s">
           <span class="cert-icon">🔒</span>
           <span>IS/IT Governance (U of Minnesota)</span>
           <span class="cert-status active">Certified</span>
@@ -1019,7 +1013,7 @@
           curiosity for process improvement, and the communication skills to make financial insights 
           land with non-finance audiences. I'm also mid-way through my CPA.
         </p>
-        <a href="Sameer Singh Resume.pdf" download="Sameer_Singh_Resume.pdf" class="btn-primary" style="display:inline-block; margin-top: 0.5rem;">
+        <a href="Sameer_Singh_Resume.pdf" download class="btn-primary" style="display:inline-block; margin-top: 0.5rem;">
           ⬇ Download My Resume
         </a>
       </div>
@@ -1042,6 +1036,92 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Dark / light mode toggle
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+  function updateThemeIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+  }
+  updateThemeIcon();
+  themeToggleBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateThemeIcon();
+  });
+
+  // Animated stat counters
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.animated) {
+        e.target.dataset.animated = 'true';
+        animateCounter(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
+
+  // Typewriter hero title
+  const roles = [
+    'Finance & FP&A Professional',
+    'MBA · CPA Candidate',
+    'Power BI & Financial Modeling',
+    'Commercial Real Estate Finance'
+  ];
+  const typedEl = document.getElementById('typed-role');
+  let roleIndex = 0, charIndex = 0, deleting = false;
+  function typeLoop() {
+    const current = roles[roleIndex];
+    if (!deleting) {
+      charIndex++;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(typeLoop, 1700);
+        return;
+      }
+    } else {
+      charIndex--;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(typeLoop, deleting ? 35 : 55);
+  }
+  typeLoop();
+
+  // Active nav link on scroll
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const navSections = document.querySelectorAll('section[id]');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
+  navSections.forEach(s => navObserver.observe(s));
 </script>
 
 </body>
