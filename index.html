@@ -30,6 +30,7 @@
       --border: #dce6f4;
       --page-bg: #ffffff;
       --card-bg: #ffffff;
+      --card-bg-rgb: 255, 255, 255;
       --heading: var(--navy);
     }
 
@@ -38,6 +39,7 @@
       --page-bg: #0a1220;
       --off-white: #0f1b2e;
       --card-bg: #101c30;
+      --card-bg-rgb: 16, 28, 48;
       --text: #cbd5e1;
       --muted: #8ba0bc;
       --border: #223350;
@@ -104,7 +106,7 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse 700px 700px at var(--hx, 70%) var(--hy, 50%), rgba(59,130,246,0.18) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero-grid {
@@ -166,6 +168,8 @@
     }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
+      position: relative;
+      overflow: hidden;
       background: var(--accent);
       color: white;
       padding: 0.85rem 2rem;
@@ -173,11 +177,14 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.15s ease, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+      display: inline-block;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,130,246,0.5); }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(59,130,246,0.5); }
     .btn-secondary {
+      position: relative;
+      overflow: hidden;
       background: transparent;
       color: white;
       padding: 0.85rem 2rem;
@@ -186,9 +193,41 @@
       font-weight: 600;
       font-size: 0.95rem;
       border: 1.5px solid rgba(255,255,255,0.3);
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s ease;
+      display: inline-block;
     }
     .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    /* ── BUTTON RIPPLE ── */
+    .btn-ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.55);
+      transform: scale(0);
+      animation: rippleAnim 0.6s ease-out;
+      pointer-events: none;
+    }
+    @keyframes rippleAnim {
+      to { transform: scale(4); opacity: 0; }
+    }
+
+    /* ── NAV LINK UNDERLINE ── */
+    .nav-links a:not(.nav-cta) { position: relative; }
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -4px;
+      height: 2px;
+      background: var(--accent-light);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+    .nav-links a:not(.nav-cta):hover::after,
+    .nav-links a:not(.nav-cta).active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
     .hero-stats {
       display: flex; gap: 2.5rem;
@@ -259,7 +298,21 @@
 
     /* ── SECTIONS SHARED ── */
     section { padding: 90px 5%; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+
+    /* ── DECORATIVE MESH BLOBS ── */
+    #skills, #education, #contact { position: relative; overflow: hidden; }
+    .mesh-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .mesh-blob.blob-a { width: 340px; height: 340px; background: var(--accent); top: -100px; right: -80px; }
+    .mesh-blob.blob-b { width: 300px; height: 300px; background: var(--gold); bottom: -120px; left: -80px; }
+    [data-theme="dark"] .mesh-blob { opacity: 0.22; }
     .section-tag {
       font-size: 0.75rem;
       font-weight: 700;
@@ -324,7 +377,9 @@
     .award-item {
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.75rem 1rem;
-      background: var(--card-bg);
+      background: rgba(var(--card-bg-rgb), 0.6);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
       border-radius: 10px;
       border-left: 3px solid var(--gold);
       font-size: 0.9rem;
@@ -413,7 +468,11 @@
       gap: 1.5rem;
     }
     .skill-card {
-      background: var(--card-bg);
+      position: relative;
+      overflow: hidden;
+      background: rgba(var(--card-bg-rgb), 0.55);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
       border-radius: 16px;
       padding: 1.75rem;
       border: 1px solid var(--border);
@@ -452,6 +511,9 @@
       gap: 1.5rem;
     }
     .edu-card {
+      background: rgba(var(--card-bg-rgb), 0.55);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2rem;
@@ -493,13 +555,17 @@
       margin-top: 1.5rem;
     }
     .cert-item {
+      position: relative;
+      overflow: hidden;
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.9rem 1.1rem;
       border: 1px solid var(--border);
       border-radius: 10px;
       font-size: 0.88rem;
       color: var(--text);
-      background: var(--off-white);
+      background: rgba(var(--card-bg-rgb), 0.55);
+      backdrop-filter: blur(14px) saturate(150%);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
     }
     .cert-item .cert-icon { font-size: 1.2rem; flex-shrink: 0; }
     .cert-status {
@@ -559,9 +625,13 @@
     }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
     .contact-link {
+      position: relative;
+      overflow: hidden;
       display: flex; align-items: center; gap: 1rem;
       padding: 1rem 1.25rem;
-      background: var(--card-bg);
+      background: rgba(var(--card-bg-rgb), 0.55);
+      backdrop-filter: blur(14px) saturate(150%);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
       border: 1px solid var(--border);
       border-radius: 12px;
       text-decoration: none;
@@ -715,6 +785,25 @@
       color: white;
       border-color: var(--accent);
       transform: translateY(-2px);
+    }
+
+    /* ── CURSOR SPOTLIGHT ON CARDS ── */
+    .skill-card::after, .cert-item::after, .edu-card::after, .contact-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle 180px at var(--mx, 50%) var(--my, 50%), rgba(59,130,246,0.16), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .skill-card:hover::after, .cert-item:hover::after, .edu-card:hover::after, .contact-link:hover::after {
+      opacity: 1;
+    }
+    .skill-card > *, .cert-item > *, .edu-card > *, .contact-link > * {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -929,6 +1018,8 @@
 
 <!-- SKILLS -->
 <section id="skills">
+  <div class="mesh-blob blob-a"></div>
+  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="fade-in">
       <div class="section-tag">Core Competencies</div>
@@ -987,6 +1078,8 @@
 
 <!-- EDUCATION -->
 <section id="education">
+  <div class="mesh-blob blob-a"></div>
+  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="fade-in">
       <div class="section-tag">Academic Background</div>
@@ -1062,6 +1155,8 @@
 
 <!-- CONTACT -->
 <section id="contact">
+  <div class="mesh-blob blob-a"></div>
+  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="contact-grid">
       <div class="fade-in">
@@ -1228,6 +1323,53 @@
     });
   }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
   navSections.forEach(s => navObserver.observe(s));
+
+  // Hero cursor-reactive glow
+  const heroEl = document.querySelector('.hero');
+  if (heroEl) {
+    heroEl.addEventListener('mousemove', (e) => {
+      const rect = heroEl.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      heroEl.style.setProperty('--hx', x + '%');
+      heroEl.style.setProperty('--hy', y + '%');
+    });
+  }
+
+  // Card cursor-reactive spotlight
+  document.querySelectorAll('.skill-card, .cert-item, .edu-card, .contact-link').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+
+  // Magnetic buttons + ripple click
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.25) + 'px)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+    btn.addEventListener('click', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'btn-ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
 </script>
 
 </body>
