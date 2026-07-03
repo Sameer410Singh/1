@@ -647,6 +647,64 @@
     }
     @keyframes blink { 50% { opacity: 0; } }
 
+    /* ── INTERACTIVE EXPERIENCE ── */
+    .exp-interactive {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .exp-tabs {
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--border);
+    }
+    .exp-tab {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      width: 100%;
+      padding: 0.85rem 0 0.85rem 1.25rem;
+      margin-left: -2px;
+      border-left: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .exp-tab-role { font-size: 0.9rem; font-weight: 600; color: var(--muted); transition: color 0.25s ease; }
+    .exp-tab-company { font-size: 0.76rem; color: var(--muted); opacity: 0.65; }
+    .exp-tab:hover { background: var(--off-white); }
+    .exp-tab:hover .exp-tab-role { color: var(--heading); }
+    .exp-tab.active { border-left-color: var(--accent); background: var(--off-white); }
+    .exp-tab.active .exp-tab-role { color: var(--accent); }
+    .exp-panels { position: relative; min-height: 220px; }
+    .exp-panel { display: none; }
+    .exp-panel.active { display: block; animation: expFadeIn 0.35s ease; }
+    @keyframes expFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 900px) {
+      .exp-interactive { grid-template-columns: 1fr; }
+      .exp-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        border-left: none;
+        border-bottom: 2px solid var(--border);
+        gap: 0.5rem;
+      }
+      .exp-tab {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        margin-left: 0;
+        margin-bottom: -2px;
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
+      }
+      .exp-tab.active { border-left-color: transparent; border-bottom-color: var(--accent); }
+    }
+
     /* ── SKILL TAG HOVER ── */
     .skill-tag {
       transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -775,73 +833,96 @@
       <h2 class="section-heading">Experience</h2>
       <p class="section-sub">A progressive track record across FP&amp;A, commercial real estate, institutional finance, and fintech.</p>
     </div>
-    <div class="timeline">
-
-      <div class="timeline-item fade-in" style="transition-delay: 0s">
-        <div class="exp-header">
-          <div class="exp-role">Finance Associate</div>
-          <div class="exp-date">Jan 2026 – Present</div>
-        </div>
-        <div class="exp-company">Royal Pacific Group · Vancouver, BC</div>
-        <ul class="exp-bullets">
-          <li>Build and maintain <span class="exp-highlight">financial models for commercial real estate acquisitions</span>, including DCF analysis, cost forecasting, and scenario planning.</li>
-          <li>Prepare structured financial reports and investment memos for senior leadership, linking analysis to strategic decision-making.</li>
-          <li>Conduct financial reconciliations across multiple data sources, proactively resolving discrepancies before reporting cycles close.</li>
-        </ul>
+    <div class="exp-interactive fade-in">
+      <div class="exp-tabs" role="tablist" aria-label="Work experience timeline">
+        <button class="exp-tab active" role="tab" aria-selected="true" aria-controls="exp-panel-0" id="exp-tab-0" data-exp="0">
+          <span class="exp-tab-role">Finance Associate</span>
+          <span class="exp-tab-company">Royal Pacific Group</span>
+        </button>
+        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-1" id="exp-tab-1" data-exp="1">
+          <span class="exp-tab-role">FP&amp;A Analyst</span>
+          <span class="exp-tab-company">NYIT</span>
+        </button>
+        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-2" id="exp-tab-2" data-exp="2">
+          <span class="exp-tab-role">Finance Analyst</span>
+          <span class="exp-tab-company">Auto Pulse India</span>
+        </button>
+        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-3" id="exp-tab-3" data-exp="3">
+          <span class="exp-tab-role">Financial Operations Associate</span>
+          <span class="exp-tab-company">Finova Capital</span>
+        </button>
+        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-4" id="exp-tab-4" data-exp="4">
+          <span class="exp-tab-role">Finance Intern</span>
+          <span class="exp-tab-company">JPMorgan Chase</span>
+        </button>
       </div>
 
-      <div class="timeline-item fade-in" style="transition-delay: 0.08s">
-        <div class="exp-header">
-          <div class="exp-role">FP&amp;A Analyst</div>
-          <div class="exp-date">Jan 2025 – Jan 2026</div>
+      <div class="exp-panels">
+        <div class="exp-panel active" role="tabpanel" id="exp-panel-0" aria-labelledby="exp-tab-0" data-exp-panel="0">
+          <div class="exp-header">
+            <div class="exp-role">Finance Associate</div>
+            <div class="exp-date">Jan 2026 – Present</div>
+          </div>
+          <div class="exp-company">Royal Pacific Group · Vancouver, BC</div>
+          <ul class="exp-bullets">
+            <li>Build and maintain <span class="exp-highlight">financial models for commercial real estate acquisitions</span>, including DCF analysis, cost forecasting, and scenario planning.</li>
+            <li>Prepare structured financial reports and investment memos for senior leadership, linking analysis to strategic decision-making.</li>
+            <li>Conduct financial reconciliations across multiple data sources, proactively resolving discrepancies before reporting cycles close.</li>
+          </ul>
         </div>
-        <div class="exp-company">New York Institute of Technology · New York City, USA</div>
-        <ul class="exp-bullets">
-          <li>Owned end-to-end monthly and quarterly financial close across multiple entities, including GL reconciliations and balance sheet tie-outs.</li>
-          <li>Produced variance reports (Actual vs. Budget vs. Forecast) with written MD&amp;A commentary reviewed by senior management.</li>
-          <li><span class="exp-highlight">Built Power BI dashboards</span> consolidating data from 6–8 departments, eliminating manual consolidation and improving real-time budget visibility.</li>
-          <li>Partnered with 6–8 department leads as a trusted financial business partner across non-finance functions.</li>
-        </ul>
-      </div>
 
-      <div class="timeline-item fade-in" style="transition-delay: 0.16s">
-        <div class="exp-header">
-          <div class="exp-role">Finance Analyst</div>
-          <div class="exp-date">Sept 2023 – Aug 2024</div>
+        <div class="exp-panel" role="tabpanel" id="exp-panel-1" aria-labelledby="exp-tab-1" data-exp-panel="1">
+          <div class="exp-header">
+            <div class="exp-role">FP&amp;A Analyst</div>
+            <div class="exp-date">Jan 2025 – Jan 2026</div>
+          </div>
+          <div class="exp-company">New York Institute of Technology · New York City, USA</div>
+          <ul class="exp-bullets">
+            <li>Owned end-to-end monthly and quarterly financial close across multiple entities, including GL reconciliations and balance sheet tie-outs.</li>
+            <li>Produced variance reports (Actual vs. Budget vs. Forecast) with written MD&amp;A commentary reviewed by senior management.</li>
+            <li><span class="exp-highlight">Built Power BI dashboards</span> consolidating data from 6–8 departments, eliminating manual consolidation and improving real-time budget visibility.</li>
+            <li>Partnered with 6–8 department leads as a trusted financial business partner across non-finance functions.</li>
+          </ul>
         </div>
-        <div class="exp-company">Auto Pulse India · Jaipur, India</div>
-        <ul class="exp-bullets">
-          <li>Built cash flow forecasting models and automated reconciliation templates in Excel, <span class="exp-highlight">resolving over $30K in transaction discrepancies</span> and improving accuracy by 20%.</li>
-          <li>Designed Power BI dashboards tracking loan portfolio performance and delinquency metrics.</li>
-          <li>Identified and implemented process improvements that reduced manual effort and improved data accuracy across finance operations.</li>
-        </ul>
-      </div>
 
-      <div class="timeline-item fade-in" style="transition-delay: 0.24s">
-        <div class="exp-header">
-          <div class="exp-role">Financial Operations Associate</div>
-          <div class="exp-date">May 2022 – Aug 2023</div>
+        <div class="exp-panel" role="tabpanel" id="exp-panel-2" aria-labelledby="exp-tab-2" data-exp-panel="2">
+          <div class="exp-header">
+            <div class="exp-role">Finance Analyst</div>
+            <div class="exp-date">Sept 2023 – Aug 2024</div>
+          </div>
+          <div class="exp-company">Auto Pulse India · Jaipur, India</div>
+          <ul class="exp-bullets">
+            <li>Built cash flow forecasting models and automated reconciliation templates in Excel, <span class="exp-highlight">resolving over $30K in transaction discrepancies</span> and improving accuracy by 20%.</li>
+            <li>Designed Power BI dashboards tracking loan portfolio performance and delinquency metrics.</li>
+            <li>Identified and implemented process improvements that reduced manual effort and improved data accuracy across finance operations.</li>
+          </ul>
         </div>
-        <div class="exp-company">Finova Capital · Mumbai, India</div>
-        <ul class="exp-bullets">
-          <li>Designed Excel-based reporting templates that <span class="exp-highlight">saved 8 hours per week</span> and reduced error rates by 20%.</li>
-          <li>Performed quarterly ratio analysis and financial benchmarking, distilling data into concise summaries for planning cycles.</li>
-          <li>Reconciled bank accounts on a recurring basis, flagging inconsistencies before reporting cycles closed.</li>
-        </ul>
-      </div>
 
-      <div class="timeline-item fade-in" style="transition-delay: 0.32s">
-        <div class="exp-header">
-          <div class="exp-role">Finance Intern</div>
-          <div class="exp-date">Feb 2022 – Apr 2022</div>
+        <div class="exp-panel" role="tabpanel" id="exp-panel-3" aria-labelledby="exp-tab-3" data-exp-panel="3">
+          <div class="exp-header">
+            <div class="exp-role">Financial Operations Associate</div>
+            <div class="exp-date">May 2022 – Aug 2023</div>
+          </div>
+          <div class="exp-company">Finova Capital · Mumbai, India</div>
+          <ul class="exp-bullets">
+            <li>Designed Excel-based reporting templates that <span class="exp-highlight">saved 8 hours per week</span> and reduced error rates by 20%.</li>
+            <li>Performed quarterly ratio analysis and financial benchmarking, distilling data into concise summaries for planning cycles.</li>
+            <li>Reconciled bank accounts on a recurring basis, flagging inconsistencies before reporting cycles closed.</li>
+          </ul>
         </div>
-        <div class="exp-company">JPMorgan Chase · Mumbai, India</div>
-        <ul class="exp-bullets">
-          <li>Prepared <span class="exp-highlight">financial working papers, sensitivity analyses, and scenario models</span> for 5+ client accounts, translating complex data into clear summaries for advisor decision-making.</li>
-          <li>Coordinated across internal teams to deliver <span class="exp-highlight">audit-ready documentation on deadline</span>, building strong habits around accuracy and detail.</li>
-        </ul>
-      </div>
 
+        <div class="exp-panel" role="tabpanel" id="exp-panel-4" aria-labelledby="exp-tab-4" data-exp-panel="4">
+          <div class="exp-header">
+            <div class="exp-role">Finance Intern</div>
+            <div class="exp-date">Feb 2022 – Apr 2022</div>
+          </div>
+          <div class="exp-company">JPMorgan Chase · Mumbai, India</div>
+          <ul class="exp-bullets">
+            <li>Prepared <span class="exp-highlight">financial working papers, sensitivity analyses, and scenario models</span> for 5+ client accounts, translating complex data into clear summaries for advisor decision-making.</li>
+            <li>Coordinated across internal teams to deliver <span class="exp-highlight">audit-ready documentation on deadline</span>, building strong habits around accuracy and detail.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1107,6 +1188,21 @@
     setTimeout(typeLoop, deleting ? 35 : 55);
   }
   typeLoop();
+
+  // Interactive experience tabs
+  const expTabs = document.querySelectorAll('.exp-tab');
+  const expPanels = document.querySelectorAll('.exp-panel');
+  expTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = tab.dataset.exp;
+      expTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      expPanels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.querySelector('.exp-panel[data-exp-panel="' + idx + '"]');
+      if (panel) panel.classList.add('active');
+    });
+  });
 
   // Active nav link on scroll
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
