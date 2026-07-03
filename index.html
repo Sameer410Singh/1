@@ -32,6 +32,7 @@
       --card-bg: #ffffff;
       --card-bg-rgb: 255, 255, 255;
       --heading: var(--navy);
+      --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     [data-theme="dark"] {
@@ -177,7 +178,7 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
-      transition: transform 0.15s ease, box-shadow 0.2s;
+      transition: transform 0.3s var(--spring), box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(59,130,246,0.4);
       display: inline-block;
     }
@@ -193,7 +194,7 @@
       font-weight: 600;
       font-size: 0.95rem;
       border: 1.5px solid rgba(255,255,255,0.3);
-      transition: border-color 0.2s, background 0.2s, transform 0.15s ease;
+      transition: border-color 0.2s, background 0.2s, transform 0.3s var(--spring);
       display: inline-block;
     }
     .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
@@ -684,7 +685,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.6s ease, transform 0.7s var(--spring);
     }
     .fade-in.visible {
       opacity: 1;
@@ -750,9 +751,9 @@
     .exp-tab.active .exp-tab-role { color: var(--accent); }
     .exp-panels { position: relative; min-height: 220px; }
     .exp-panel { display: none; }
-    .exp-panel.active { display: block; animation: expFadeIn 0.35s ease; }
+    .exp-panel.active { display: block; animation: expFadeIn 0.5s var(--spring); }
     @keyframes expFadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 900px) {
@@ -777,7 +778,7 @@
 
     /* ── SKILL TAG HOVER ── */
     .skill-tag {
-      transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.35s var(--spring), background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
       cursor: default;
     }
     .skill-tag:hover {
@@ -805,9 +806,98 @@
       position: relative;
       z-index: 1;
     }
+
+    /* ── 3D TILT SETUP ── */
+    .skills-grid, .cert-list, .edu-grid, .contact-links {
+      perspective: 1000px;
+    }
+    .skill-card, .cert-item, .edu-card, .contact-link {
+      transition: transform 0.4s var(--spring), box-shadow 0.3s ease, border-color 0.2s ease;
+      will-change: transform;
+    }
+
+    /* ── PRELOADER ── */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #preloader.loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: white;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: preloaderIn 0.8s var(--spring) forwards 0.15s;
+    }
+    .preloader-name span { color: var(--accent-light); }
+    @keyframes preloaderIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HERO ENTRANCE ── */
+    .hero-eyebrow, .hero h1, .hero-title, .hero-bio, .hero-actions, .hero-stats, .hero-photo-wrap {
+      opacity: 0;
+      transform: translateY(26px);
+      animation: heroReveal 0.9s var(--spring) forwards;
+    }
+    .hero-eyebrow { animation-delay: 0.55s; }
+    .hero h1 { animation-delay: 0.68s; }
+    .hero-title { animation-delay: 0.81s; }
+    .hero-bio { animation-delay: 0.94s; }
+    .hero-actions { animation-delay: 1.07s; }
+    .hero-stats { animation-delay: 1.2s; }
+    .hero-photo-wrap { animation-delay: 0.65s; }
+    @keyframes heroReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── FLOATING DECORATIONS ── */
+    .hero-badge {
+      animation: floatBadge 4.5s ease-in-out infinite;
+      animation-delay: 1.4s;
+    }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--gold), transparent 70%);
+      top: -18px;
+      right: 6px;
+      opacity: 0.55;
+      filter: blur(3px);
+      z-index: 2;
+      animation: floatOrb 5.5s ease-in-out infinite;
+      animation-delay: 1.6s;
+    }
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-10px, -14px); }
+    }
   </style>
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-name">Sameer <span>Singh</span></div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -1336,7 +1426,7 @@
     });
   }
 
-  // Card cursor-reactive spotlight
+  // Card cursor-reactive spotlight + 3D tilt
   document.querySelectorAll('.skill-card, .cert-item, .edu-card, .contact-link').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -1344,7 +1434,21 @@
       const y = ((e.clientY - rect.top) / rect.height) * 100;
       card.style.setProperty('--mx', x + '%');
       card.style.setProperty('--my', y + '%');
+      const rotateX = ((y - 50) / 50) * -6;
+      const rotateY = ((x - 50) / 50) * 6;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
     });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  // Page load preloader
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const pre = document.getElementById('preloader');
+      if (pre) pre.classList.add('loaded');
+    }, 650);
   });
 
   // Magnetic buttons + ripple click
