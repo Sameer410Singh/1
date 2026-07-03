@@ -2,15 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>
-    (function() {
-      var saved = localStorage.getItem('theme');
-      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sameer Singh Chouhan, Finance Professional</title>
+  <title>Sameer Singh Chouhan | Finance &amp; FP&amp;A Professional | Vancouver</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Sameer Singh Chouhan is a Vancouver-based Finance and FP&amp;A Professional with an MBA and 3+ years of experience in budgeting, forecasting, Power BI, and financial modelling. Currently open to finance roles in Vancouver." />
+  <meta name="keywords" content="Sameer Singh Chouhan, Sameer Chouhan, Finance Professional Vancouver, FP&amp;A Analyst Vancouver, Financial Analyst Vancouver, MBA Finance, Power BI Analyst, CPA Candidate Vancouver" />
+  <meta name="author" content="Sameer Singh Chouhan" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="OlS8QBHR8V8xjkQDq9phk_CZNdu44kWMeoVsQvh7MqU" />
+  <link rel="canonical" href="https://sameer410singh.github.io/1/" />
+
+  <!-- Open Graph (LinkedIn, Facebook previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sameer410singh.github.io/1/" />
+  <meta property="og:title" content="Sameer Singh Chouhan | Finance &amp; FP&amp;A Professional | Vancouver" />
+  <meta property="og:description" content="Vancouver-based Finance and FP&amp;A Professional with an MBA and 3+ years of experience. Open to finance roles across FP&amp;A, corporate finance, and financial reporting." />
+  <meta property="og:site_name" content="Sameer Singh Chouhan" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sameer Singh Chouhan | Finance &amp; FP&amp;A Professional | Vancouver" />
+  <meta name="twitter:description" content="Vancouver-based Finance and FP&amp;A Professional with an MBA and 3+ years of experience. Open to finance roles." />
+
+  <!-- Structured Data (Google rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sameer Singh Chouhan",
+    "alternateName": "Sameer Chouhan",
+    "url": "https://sameer410singh.github.io/1/",
+    "email": "sameer410singh@gmail.com",
+    "telephone": "+1-236-268-5472",
+    "jobTitle": "Finance & FP&A Professional",
+    "description": "Vancouver-based Finance and FP&A Professional with an MBA and 3+ years of experience in budgeting, forecasting, variance analysis, and Power BI dashboards.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "New York Institute of Technology",
+        "description": "Master of Business Administration"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Rajasthan",
+        "description": "Bachelor of Commerce"
+      }
+    ],
+    "sameAs": [
+      "https://linkedin.com/in/sameer410"
+    ],
+    "knowsAbout": ["FP&A", "Financial Planning", "Budgeting", "Forecasting", "Power BI", "Financial Modelling", "Variance Analysis", "Corporate Finance"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -28,23 +78,6 @@
       --text: #1e2d45;
       --muted: #5a7394;
       --border: #dce6f4;
-      --page-bg: #ffffff;
-      --card-bg: #ffffff;
-      --card-bg-rgb: 255, 255, 255;
-      --heading: var(--navy);
-      --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    [data-theme="dark"] {
-      --blue: #7fb3ff;
-      --page-bg: #0a1220;
-      --off-white: #0f1b2e;
-      --card-bg: #101c30;
-      --card-bg-rgb: 16, 28, 48;
-      --text: #cbd5e1;
-      --muted: #8ba0bc;
-      --border: #223350;
-      --heading: #f1f5f9;
     }
 
     html { scroll-behavior: smooth; }
@@ -52,9 +85,8 @@
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background: var(--page-bg);
+      background: var(--white);
       overflow-x: hidden;
-      transition: background 0.3s ease, color 0.3s ease;
     }
 
     /* ── NAV ── */
@@ -93,7 +125,7 @@
       font-weight: 600 !important;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--accent-light) !important; color: var(--heading) !important; }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--navy) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -169,8 +201,6 @@
     }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
-      position: relative;
-      overflow: hidden;
       background: var(--accent);
       color: white;
       padding: 0.85rem 2rem;
@@ -178,14 +208,11 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
-      transition: transform 0.3s var(--spring), box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(59,130,246,0.4);
-      display: inline-block;
     }
-    .btn-primary:hover { box-shadow: 0 8px 30px rgba(59,130,246,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59,130,246,0.5); }
     .btn-secondary {
-      position: relative;
-      overflow: hidden;
       background: transparent;
       color: white;
       padding: 0.85rem 2rem;
@@ -194,41 +221,9 @@
       font-weight: 600;
       font-size: 0.95rem;
       border: 1.5px solid rgba(255,255,255,0.3);
-      transition: border-color 0.2s, background 0.2s, transform 0.3s var(--spring);
-      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
     }
     .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
-
-    /* ── BUTTON RIPPLE ── */
-    .btn-ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.55);
-      transform: scale(0);
-      animation: rippleAnim 0.6s ease-out;
-      pointer-events: none;
-    }
-    @keyframes rippleAnim {
-      to { transform: scale(4); opacity: 0; }
-    }
-
-    /* ── NAV LINK UNDERLINE ── */
-    .nav-links a:not(.nav-cta) { position: relative; }
-    .nav-links a:not(.nav-cta)::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; bottom: -4px;
-      height: 2px;
-      background: var(--accent-light);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.25s ease;
-    }
-    .nav-links a:not(.nav-cta):hover::after,
-    .nav-links a:not(.nav-cta).active::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
 
     .hero-stats {
       display: flex; gap: 2.5rem;
@@ -299,21 +294,8 @@
 
     /* ── SECTIONS SHARED ── */
     section { padding: 90px 5%; }
-    .section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
 
-    /* ── DECORATIVE MESH BLOBS ── */
-    #skills, #education, #contact { position: relative; overflow: hidden; }
-    .mesh-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .mesh-blob.blob-a { width: 340px; height: 340px; background: var(--accent); top: -100px; right: -80px; }
-    .mesh-blob.blob-b { width: 300px; height: 300px; background: var(--gold); bottom: -120px; left: -80px; }
-    [data-theme="dark"] .mesh-blob { opacity: 0.22; }
     .section-tag {
       font-size: 0.75rem;
       font-weight: 700;
@@ -325,7 +307,7 @@
     .section-heading {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: var(--heading);
+      color: var(--navy);
       font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -378,9 +360,7 @@
     .award-item {
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.75rem 1rem;
-      background: rgba(var(--card-bg-rgb), 0.6);
-      backdrop-filter: blur(12px) saturate(150%);
-      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      background: white;
       border-radius: 10px;
       border-left: 3px solid var(--gold);
       font-size: 0.9rem;
@@ -390,7 +370,7 @@
     .award-icon { font-size: 1.1rem; }
 
     /* ── EXPERIENCE ── */
-    #experience { background: var(--page-bg); }
+    #experience { background: white; }
     .timeline { position: relative; padding-left: 2rem; }
     .timeline::before {
       content: '';
@@ -424,7 +404,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--heading);
+      color: var(--navy);
     }
     .exp-date {
       font-size: 0.8rem;
@@ -469,11 +449,7 @@
       gap: 1.5rem;
     }
     .skill-card {
-      position: relative;
-      overflow: hidden;
-      background: rgba(var(--card-bg-rgb), 0.55);
-      backdrop-filter: blur(16px) saturate(150%);
-      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      background: white;
       border-radius: 16px;
       padding: 1.75rem;
       border: 1px solid var(--border);
@@ -484,7 +460,7 @@
     .skill-card-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
-      color: var(--heading);
+      color: var(--navy);
       font-weight: 600;
       margin-bottom: 1rem;
     }
@@ -505,16 +481,13 @@
     }
 
     /* ── EDUCATION ── */
-    #education { background: var(--page-bg); }
+    #education { background: white; }
     .edu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
     .edu-card {
-      background: rgba(var(--card-bg-rgb), 0.55);
-      backdrop-filter: blur(16px) saturate(150%);
-      -webkit-backdrop-filter: blur(16px) saturate(150%);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2rem;
@@ -531,7 +504,7 @@
     .edu-degree {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
-      color: var(--heading);
+      color: var(--navy);
       font-weight: 600;
       margin-bottom: 0.3rem;
     }
@@ -556,17 +529,13 @@
       margin-top: 1.5rem;
     }
     .cert-item {
-      position: relative;
-      overflow: hidden;
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.9rem 1.1rem;
       border: 1px solid var(--border);
       border-radius: 10px;
       font-size: 0.88rem;
       color: var(--text);
-      background: rgba(var(--card-bg-rgb), 0.55);
-      backdrop-filter: blur(14px) saturate(150%);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      background: var(--off-white);
     }
     .cert-item .cert-icon { font-size: 1.2rem; flex-shrink: 0; }
     .cert-status {
@@ -626,13 +595,9 @@
     }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
     .contact-link {
-      position: relative;
-      overflow: hidden;
       display: flex; align-items: center; gap: 1rem;
       padding: 1rem 1.25rem;
-      background: rgba(var(--card-bg-rgb), 0.55);
-      backdrop-filter: blur(14px) saturate(150%);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      background: white;
       border: 1px solid var(--border);
       border-radius: 12px;
       text-decoration: none;
@@ -642,7 +607,7 @@
     .contact-link:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(59,130,246,0.1); }
     .contact-link-icon { font-size: 1.3rem; width: 40px; text-align: center; }
     .contact-link-label { font-size: 0.78rem; color: var(--muted); }
-    .contact-link-value { font-weight: 600; font-size: 0.92rem; color: var(--heading); }
+    .contact-link-value { font-weight: 600; font-size: 0.92rem; color: var(--navy); }
     .location-note {
       font-size: 0.88rem;
       color: var(--muted);
@@ -656,7 +621,7 @@
     .contact-right h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
-      color: var(--heading);
+      color: var(--navy);
       margin-bottom: 1rem;
     }
     .contact-right p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
@@ -685,110 +650,18 @@
     .fade-in {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.7s var(--spring);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* ── THEME TOGGLE ── */
-    .theme-toggle {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: white;
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      transition: background 0.2s, transform 0.3s;
+    /* ── CURSOR LIGHT ON CARDS ── */
+    .skill-card, .cert-item, .edu-card, .contact-link {
+      position: relative;
+      overflow: hidden;
     }
-    .theme-toggle:hover { background: rgba(255,255,255,0.2); transform: rotate(20deg); }
-
-    /* ── ACTIVE NAV LINK ── */
-    .nav-links a.active { color: var(--accent-light); }
-
-    /* ── TYPEWRITER ── */
-    .type-cursor {
-      display: inline-block;
-      margin-left: 2px;
-      color: var(--gold);
-      animation: blink 1s step-end infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    /* ── INTERACTIVE EXPERIENCE ── */
-    .exp-interactive {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-    .exp-tabs {
-      display: flex;
-      flex-direction: column;
-      border-left: 2px solid var(--border);
-    }
-    .exp-tab {
-      all: unset;
-      box-sizing: border-box;
-      cursor: pointer;
-      width: 100%;
-      padding: 0.85rem 0 0.85rem 1.25rem;
-      margin-left: -2px;
-      border-left: 2px solid transparent;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      transition: border-color 0.25s ease, background 0.25s ease;
-    }
-    .exp-tab-role { font-size: 0.9rem; font-weight: 600; color: var(--muted); transition: color 0.25s ease; }
-    .exp-tab-company { font-size: 0.76rem; color: var(--muted); opacity: 0.65; }
-    .exp-tab:hover { background: var(--off-white); }
-    .exp-tab:hover .exp-tab-role { color: var(--heading); }
-    .exp-tab.active { border-left-color: var(--accent); background: var(--off-white); }
-    .exp-tab.active .exp-tab-role { color: var(--accent); }
-    .exp-panels { position: relative; min-height: 220px; }
-    .exp-panel { display: none; }
-    .exp-panel.active { display: block; animation: expFadeIn 0.5s var(--spring); }
-    @keyframes expFadeIn {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 900px) {
-      .exp-interactive { grid-template-columns: 1fr; }
-      .exp-tabs {
-        flex-direction: row;
-        overflow-x: auto;
-        border-left: none;
-        border-bottom: 2px solid var(--border);
-        gap: 0.5rem;
-      }
-      .exp-tab {
-        border-left: none;
-        border-bottom: 2px solid transparent;
-        margin-left: 0;
-        margin-bottom: -2px;
-        padding: 0.75rem 1rem;
-        white-space: nowrap;
-      }
-      .exp-tab.active { border-left-color: transparent; border-bottom-color: var(--accent); }
-    }
-
-    /* ── SKILL TAG HOVER ── */
-    .skill-tag {
-      transition: transform 0.35s var(--spring), background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-      cursor: default;
-    }
-    .skill-tag:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* ── CURSOR SPOTLIGHT ON CARDS ── */
     .skill-card::after, .cert-item::after, .edu-card::after, .contact-link::after {
       content: '';
       position: absolute;
@@ -806,98 +679,9 @@
       position: relative;
       z-index: 1;
     }
-
-    /* ── 3D TILT SETUP ── */
-    .skills-grid, .cert-list, .edu-grid, .contact-links {
-      perspective: 1000px;
-    }
-    .skill-card, .cert-item, .edu-card, .contact-link {
-      transition: transform 0.4s var(--spring), box-shadow 0.3s ease, border-color 0.2s ease;
-      will-change: transform;
-    }
-
-    /* ── PRELOADER ── */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-    #preloader.loaded {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .preloader-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: white;
-      opacity: 0;
-      transform: translateY(14px);
-      animation: preloaderIn 0.8s var(--spring) forwards 0.15s;
-    }
-    .preloader-name span { color: var(--accent-light); }
-    @keyframes preloaderIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── HERO ENTRANCE ── */
-    .hero-eyebrow, .hero h1, .hero-title, .hero-bio, .hero-actions, .hero-stats, .hero-photo-wrap {
-      opacity: 0;
-      transform: translateY(26px);
-      animation: heroReveal 0.9s var(--spring) forwards;
-    }
-    .hero-eyebrow { animation-delay: 0.55s; }
-    .hero h1 { animation-delay: 0.68s; }
-    .hero-title { animation-delay: 0.81s; }
-    .hero-bio { animation-delay: 0.94s; }
-    .hero-actions { animation-delay: 1.07s; }
-    .hero-stats { animation-delay: 1.2s; }
-    .hero-photo-wrap { animation-delay: 0.65s; }
-    @keyframes heroReveal {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── FLOATING DECORATIONS ── */
-    .hero-badge {
-      animation: floatBadge 4.5s ease-in-out infinite;
-      animation-delay: 1.4s;
-    }
-    @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute;
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--gold), transparent 70%);
-      top: -18px;
-      right: 6px;
-      opacity: 0.55;
-      filter: blur(3px);
-      z-index: 2;
-      animation: floatOrb 5.5s ease-in-out infinite;
-      animation-delay: 1.6s;
-    }
-    @keyframes floatOrb {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-10px, -14px); }
-    }
   </style>
 </head>
 <body>
-
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="preloader-name">Sameer <span>Singh</span></div>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -908,7 +692,6 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="theme-icon">🌙</span></button></li>
   </ul>
 </nav>
 
@@ -918,7 +701,7 @@
     <div>
       <div class="hero-eyebrow">Open to Finance Roles in Vancouver</div>
       <h1>Sameer Singh<br><span>Chouhan</span></h1>
-      <div class="hero-title"><span id="typed-role"></span><span class="type-cursor">|</span></div>
+      <div class="hero-title">Finance &amp; FP&amp;A Professional · MBA · CPA Candidate</div>
       <p class="hero-bio">
         I turn financial data into decisions that matter. With 3+ years across FP&amp;A, corporate finance, 
         and commercial real estate, I build the models, dashboards, and partnerships that help organizations 
@@ -926,23 +709,23 @@
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Let's Connect</a>
-        <a href="Sameer_Singh_Resume.pdf" download class="btn-secondary">⬇ Download Resume</a>
+        <a href="Sameer Singh Resume.pdf" download="Sameer_Singh_Resume.pdf" class="btn-secondary">⬇ Download Resume</a>
       </div>
       <div class="hero-stats">
         <div>
-          <div class="stat-num" data-target="3" data-suffix="+">0</div>
+          <div class="stat-num">3+</div>
           <div class="stat-label">Years FP&amp;A Experience</div>
         </div>
         <div>
-          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-num">5</div>
           <div class="stat-label">Companies</div>
         </div>
         <div>
-          <div class="stat-num" data-target="30" data-prefix="$" data-suffix="K+">$0K+</div>
+          <div class="stat-num">$30K+</div>
           <div class="stat-label">Discrepancies Resolved</div>
         </div>
         <div>
-          <div class="stat-num" data-target="8" data-suffix=" hrs">0</div>
+          <div class="stat-num">8 hrs</div>
           <div class="stat-label">Saved Per Week</div>
         </div>
       </div>
@@ -1012,112 +795,87 @@
       <h2 class="section-heading">Experience</h2>
       <p class="section-sub">A progressive track record across FP&amp;A, commercial real estate, institutional finance, and fintech.</p>
     </div>
-    <div class="exp-interactive fade-in">
-      <div class="exp-tabs" role="tablist" aria-label="Work experience timeline">
-        <button class="exp-tab active" role="tab" aria-selected="true" aria-controls="exp-panel-0" id="exp-tab-0" data-exp="0">
-          <span class="exp-tab-role">Finance Associate</span>
-          <span class="exp-tab-company">Royal Pacific Group</span>
-        </button>
-        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-1" id="exp-tab-1" data-exp="1">
-          <span class="exp-tab-role">FP&amp;A Analyst</span>
-          <span class="exp-tab-company">NYIT</span>
-        </button>
-        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-2" id="exp-tab-2" data-exp="2">
-          <span class="exp-tab-role">Finance Analyst</span>
-          <span class="exp-tab-company">Auto Pulse India</span>
-        </button>
-        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-3" id="exp-tab-3" data-exp="3">
-          <span class="exp-tab-role">Financial Operations Associate</span>
-          <span class="exp-tab-company">Finova Capital</span>
-        </button>
-        <button class="exp-tab" role="tab" aria-selected="false" aria-controls="exp-panel-4" id="exp-tab-4" data-exp="4">
-          <span class="exp-tab-role">Finance Intern</span>
-          <span class="exp-tab-company">JPMorgan Chase</span>
-        </button>
+    <div class="timeline fade-in">
+
+      <div class="timeline-item">
+        <div class="exp-header">
+          <div class="exp-role">Finance Associate</div>
+          <div class="exp-date">Jan 2026 – Present</div>
+        </div>
+        <div class="exp-company">Royal Pacific Group · Vancouver, BC</div>
+        <ul class="exp-bullets">
+          <li>Build and maintain <span class="exp-highlight">financial models for commercial real estate acquisitions</span>, including DCF analysis, cost forecasting, and scenario planning.</li>
+          <li>Prepare structured financial reports and investment memos for senior leadership, linking analysis to strategic decision-making.</li>
+          <li>Conduct financial reconciliations across multiple data sources, proactively resolving discrepancies before reporting cycles close.</li>
+        </ul>
       </div>
 
-      <div class="exp-panels">
-        <div class="exp-panel active" role="tabpanel" id="exp-panel-0" aria-labelledby="exp-tab-0" data-exp-panel="0">
-          <div class="exp-header">
-            <div class="exp-role">Finance Associate</div>
-            <div class="exp-date">Jan 2026 – Present</div>
-          </div>
-          <div class="exp-company">Royal Pacific Group · Vancouver, BC</div>
-          <ul class="exp-bullets">
-            <li>Build and maintain <span class="exp-highlight">financial models for commercial real estate acquisitions</span>, including DCF analysis, cost forecasting, and scenario planning.</li>
-            <li>Prepare structured financial reports and investment memos for senior leadership, linking analysis to strategic decision-making.</li>
-            <li>Conduct financial reconciliations across multiple data sources, proactively resolving discrepancies before reporting cycles close.</li>
-          </ul>
+      <div class="timeline-item">
+        <div class="exp-header">
+          <div class="exp-role">FP&amp;A Analyst</div>
+          <div class="exp-date">Jan 2025 – Jan 2026</div>
         </div>
-
-        <div class="exp-panel" role="tabpanel" id="exp-panel-1" aria-labelledby="exp-tab-1" data-exp-panel="1">
-          <div class="exp-header">
-            <div class="exp-role">FP&amp;A Analyst</div>
-            <div class="exp-date">Jan 2025 – Jan 2026</div>
-          </div>
-          <div class="exp-company">New York Institute of Technology · New York City, USA</div>
-          <ul class="exp-bullets">
-            <li>Owned end-to-end monthly and quarterly financial close across multiple entities, including GL reconciliations and balance sheet tie-outs.</li>
-            <li>Produced variance reports (Actual vs. Budget vs. Forecast) with written MD&amp;A commentary reviewed by senior management.</li>
-            <li><span class="exp-highlight">Built Power BI dashboards</span> consolidating data from 6–8 departments, eliminating manual consolidation and improving real-time budget visibility.</li>
-            <li>Partnered with 6–8 department leads as a trusted financial business partner across non-finance functions.</li>
-          </ul>
-        </div>
-
-        <div class="exp-panel" role="tabpanel" id="exp-panel-2" aria-labelledby="exp-tab-2" data-exp-panel="2">
-          <div class="exp-header">
-            <div class="exp-role">Finance Analyst</div>
-            <div class="exp-date">Sept 2023 – Aug 2024</div>
-          </div>
-          <div class="exp-company">Auto Pulse India · Jaipur, India</div>
-          <ul class="exp-bullets">
-            <li>Built cash flow forecasting models and automated reconciliation templates in Excel, <span class="exp-highlight">resolving over $30K in transaction discrepancies</span> and improving accuracy by 20%.</li>
-            <li>Designed Power BI dashboards tracking loan portfolio performance and delinquency metrics.</li>
-            <li>Identified and implemented process improvements that reduced manual effort and improved data accuracy across finance operations.</li>
-          </ul>
-        </div>
-
-        <div class="exp-panel" role="tabpanel" id="exp-panel-3" aria-labelledby="exp-tab-3" data-exp-panel="3">
-          <div class="exp-header">
-            <div class="exp-role">Financial Operations Associate</div>
-            <div class="exp-date">May 2022 – Aug 2023</div>
-          </div>
-          <div class="exp-company">Finova Capital · Mumbai, India</div>
-          <ul class="exp-bullets">
-            <li>Designed Excel-based reporting templates that <span class="exp-highlight">saved 8 hours per week</span> and reduced error rates by 20%.</li>
-            <li>Performed quarterly ratio analysis and financial benchmarking, distilling data into concise summaries for planning cycles.</li>
-            <li>Reconciled bank accounts on a recurring basis, flagging inconsistencies before reporting cycles closed.</li>
-          </ul>
-        </div>
-
-        <div class="exp-panel" role="tabpanel" id="exp-panel-4" aria-labelledby="exp-tab-4" data-exp-panel="4">
-          <div class="exp-header">
-            <div class="exp-role">Finance Intern</div>
-            <div class="exp-date">Feb 2022 – Apr 2022</div>
-          </div>
-          <div class="exp-company">JPMorgan Chase · Mumbai, India</div>
-          <ul class="exp-bullets">
-            <li>Prepared <span class="exp-highlight">financial working papers, sensitivity analyses, and scenario models</span> for 5+ client accounts, translating complex data into clear summaries for advisor decision-making.</li>
-            <li>Coordinated across internal teams to deliver <span class="exp-highlight">audit-ready documentation on deadline</span>, building strong habits around accuracy and detail.</li>
-          </ul>
-        </div>
+        <div class="exp-company">New York Institute of Technology · New York City, USA</div>
+        <ul class="exp-bullets">
+          <li>Owned end-to-end monthly and quarterly financial close across multiple entities, including GL reconciliations and balance sheet tie-outs.</li>
+          <li>Produced variance reports (Actual vs. Budget vs. Forecast) with written MD&amp;A commentary reviewed by senior management.</li>
+          <li><span class="exp-highlight">Built Power BI dashboards</span> consolidating data from 6–8 departments, eliminating manual consolidation and improving real-time budget visibility.</li>
+          <li>Partnered with 6–8 department leads as a trusted financial business partner across non-finance functions.</li>
+        </ul>
       </div>
+
+      <div class="timeline-item">
+        <div class="exp-header">
+          <div class="exp-role">Finance Analyst</div>
+          <div class="exp-date">Sept 2023 – Aug 2024</div>
+        </div>
+        <div class="exp-company">Auto Pulse India · Jaipur, India</div>
+        <ul class="exp-bullets">
+          <li>Built cash flow forecasting models and automated reconciliation templates in Excel, <span class="exp-highlight">resolving over $30K in transaction discrepancies</span> and improving accuracy by 20%.</li>
+          <li>Designed Power BI dashboards tracking loan portfolio performance and delinquency metrics.</li>
+          <li>Identified and implemented process improvements that reduced manual effort and improved data accuracy across finance operations.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="exp-header">
+          <div class="exp-role">Financial Operations Associate</div>
+          <div class="exp-date">May 2022 – Aug 2023</div>
+        </div>
+        <div class="exp-company">Finova Capital · Mumbai, India</div>
+        <ul class="exp-bullets">
+          <li>Designed Excel-based reporting templates that <span class="exp-highlight">saved 8 hours per week</span> and reduced error rates by 20%.</li>
+          <li>Performed quarterly ratio analysis and financial benchmarking, distilling data into concise summaries for planning cycles.</li>
+          <li>Reconciled bank accounts on a recurring basis, flagging inconsistencies before reporting cycles closed.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="exp-header">
+          <div class="exp-role">Finance Intern</div>
+          <div class="exp-date">Feb 2022 – Apr 2022</div>
+        </div>
+        <div class="exp-company">JPMorgan Chase · Mumbai, India</div>
+        <ul class="exp-bullets">
+          <li>Prepared <span class="exp-highlight">financial working papers, sensitivity analyses, and scenario models</span> for 5+ client accounts, translating complex data into clear summaries for advisor decision-making.</li>
+          <li>Coordinated across internal teams to deliver <span class="exp-highlight">audit-ready documentation on deadline</span>, building strong habits around accuracy and detail.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="mesh-blob blob-a"></div>
-  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="fade-in">
       <div class="section-tag">Core Competencies</div>
       <h2 class="section-heading">Skills &amp; Tools</h2>
       <p class="section-sub">A full-stack finance skillset, from strategic planning down to the reconciliation level.</p>
     </div>
-    <div class="skills-grid">
-      <div class="skill-card fade-in" style="transition-delay: 0s">
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
         <div class="skill-card-icon">📊</div>
         <div class="skill-card-title">FP&amp;A Core</div>
         <div class="skill-tags">
@@ -1129,7 +887,7 @@
           <span class="skill-tag">Strategic Planning</span>
         </div>
       </div>
-      <div class="skill-card fade-in" style="transition-delay: 0.08s">
+      <div class="skill-card">
         <div class="skill-card-icon">🛠️</div>
         <div class="skill-card-title">Tools &amp; Technology</div>
         <div class="skill-tags">
@@ -1141,7 +899,7 @@
           <span class="skill-tag">Scenario Planning</span>
         </div>
       </div>
-      <div class="skill-card fade-in" style="transition-delay: 0.16s">
+      <div class="skill-card">
         <div class="skill-card-icon">🤝</div>
         <div class="skill-card-title">Business Partnering</div>
         <div class="skill-tags">
@@ -1151,7 +909,7 @@
           <span class="skill-tag">Department Budgeting</span>
         </div>
       </div>
-      <div class="skill-card fade-in" style="transition-delay: 0.24s">
+      <div class="skill-card">
         <div class="skill-card-icon">⚙️</div>
         <div class="skill-card-title">Process &amp; Controls</div>
         <div class="skill-tags">
@@ -1168,21 +926,19 @@
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="mesh-blob blob-a"></div>
-  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="fade-in">
       <div class="section-tag">Academic Background</div>
       <h2 class="section-heading">Education</h2>
     </div>
-    <div class="edu-grid">
-      <div class="edu-card fade-in" style="transition-delay: 0s">
+    <div class="edu-grid fade-in">
+      <div class="edu-card">
         <div class="edu-degree">Master of Business Administration</div>
         <div class="edu-school">New York Institute of Technology</div>
         <div class="edu-meta">2024 – 2025 · Management</div>
         <span class="edu-gpa">GPA: 3.5 / 4.0</span>
       </div>
-      <div class="edu-card fade-in" style="transition-delay: 0.1s">
+      <div class="edu-card">
         <div class="edu-degree">Bachelor of Commerce</div>
         <div class="edu-school">University of Rajasthan</div>
         <div class="edu-meta">2019 – 2022</div>
@@ -1193,32 +949,42 @@
     <div style="margin-top: 3rem;" class="fade-in">
       <div class="section-tag">Certifications</div>
       <div class="cert-list">
-        <div class="cert-item fade-in" style="transition-delay: 0s">
+        <div class="cert-item">
           <span class="cert-icon">📋</span>
           <span>Certified Public Accountant (CPA)</span>
           <span class="cert-status progress">In Progress</span>
         </div>
-        <div class="cert-item fade-in" style="transition-delay: 0.08s">
+        <div class="cert-item">
+          <span class="cert-icon">📊</span>
+          <span>Financial Modeling &amp; Valuation Analyst (FMVA, CFI)</span>
+          <span class="cert-status active">Certified</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-icon">🔍</span>
+          <span>Google Data Analytics Certificate</span>
+          <span class="cert-status active">Certified</span>
+        </div>
+        <div class="cert-item">
           <span class="cert-icon">📈</span>
           <span>Fundamental Data Analytics in Excel (CFI)</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item fade-in" style="transition-delay: 0.16s">
+        <div class="cert-item">
           <span class="cert-icon">💳</span>
           <span>Future of Payment Technologies</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item fade-in" style="transition-delay: 0.24s">
+        <div class="cert-item">
           <span class="cert-icon">🔒</span>
           <span>IS/IT Governance (U of Minnesota)</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item fade-in" style="transition-delay: 0.32s">
+        <div class="cert-item">
           <span class="cert-icon">🏛️</span>
           <span>CFA Institute — Investment Foundations</span>
           <span class="cert-status active">Certified</span>
         </div>
-        <div class="cert-item fade-in" style="transition-delay: 0.4s">
+        <div class="cert-item">
           <span class="cert-icon">📊</span>
           <span>FMVA &amp; FPAP (CFI)</span>
           <span class="cert-status active">Certified</span>
@@ -1245,8 +1011,6 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="mesh-blob blob-a"></div>
-  <div class="mesh-blob blob-b"></div>
   <div class="section-inner">
     <div class="contact-grid">
       <div class="fade-in">
@@ -1289,7 +1053,7 @@
           curiosity for process improvement, and the communication skills to make financial insights 
           land with non-finance audiences. I'm also mid-way through my CPA.
         </p>
-        <a href="Sameer_Singh_Resume.pdf" download class="btn-primary" style="display:inline-block; margin-top: 0.5rem;">
+        <a href="Sameer Singh Resume.pdf" download="Sameer_Singh_Resume.pdf" class="btn-primary" style="display:inline-block; margin-top: 0.5rem;">
           ⬇ Download My Resume
         </a>
       </div>
@@ -1313,108 +1077,7 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Dark / light mode toggle
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = themeToggleBtn.querySelector('.theme-icon');
-  function updateThemeIcon() {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    themeIcon.textContent = isDark ? '☀️' : '🌙';
-  }
-  updateThemeIcon();
-  themeToggleBtn.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    updateThemeIcon();
-  });
-
-  // Animated stat counters
-  function animateCounter(el) {
-    const target = parseFloat(el.dataset.target);
-    const prefix = el.dataset.prefix || '';
-    const suffix = el.dataset.suffix || '';
-    const duration = 1400;
-    const start = performance.now();
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = prefix + Math.round(target * eased) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !e.target.dataset.animated) {
-        e.target.dataset.animated = 'true';
-        animateCounter(e.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
-
-  // Typewriter hero title
-  const roles = [
-    'Finance & FP&A Professional',
-    'MBA · CPA Candidate',
-    'Power BI & Financial Modeling',
-    'Commercial Real Estate Finance'
-  ];
-  const typedEl = document.getElementById('typed-role');
-  let roleIndex = 0, charIndex = 0, deleting = false;
-  function typeLoop() {
-    const current = roles[roleIndex];
-    if (!deleting) {
-      charIndex++;
-      typedEl.textContent = current.slice(0, charIndex);
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(typeLoop, 1700);
-        return;
-      }
-    } else {
-      charIndex--;
-      typedEl.textContent = current.slice(0, charIndex);
-      if (charIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
-    }
-    setTimeout(typeLoop, deleting ? 35 : 55);
-  }
-  typeLoop();
-
-  // Interactive experience tabs
-  const expTabs = document.querySelectorAll('.exp-tab');
-  const expPanels = document.querySelectorAll('.exp-panel');
-  expTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const idx = tab.dataset.exp;
-      expTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      expPanels.forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      const panel = document.querySelector('.exp-panel[data-exp-panel="' + idx + '"]');
-      if (panel) panel.classList.add('active');
-    });
-  });
-
-  // Active nav link on scroll
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  const navSections = document.querySelectorAll('section[id]');
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
-  navSections.forEach(s => navObserver.observe(s));
-
-  // Hero cursor-reactive glow
+  // Hero cursor-reactive light
   const heroEl = document.querySelector('.hero');
   if (heroEl) {
     heroEl.addEventListener('mousemove', (e) => {
@@ -1426,7 +1089,7 @@
     });
   }
 
-  // Card cursor-reactive spotlight + 3D tilt
+  // Card cursor-reactive light
   document.querySelectorAll('.skill-card, .cert-item, .edu-card, .contact-link').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -1434,44 +1097,6 @@
       const y = ((e.clientY - rect.top) / rect.height) * 100;
       card.style.setProperty('--mx', x + '%');
       card.style.setProperty('--my', y + '%');
-      const rotateX = ((y - 50) / 50) * -6;
-      const rotateY = ((x - 50) / 50) * 6;
-      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-
-  // Page load preloader
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const pre = document.getElementById('preloader');
-      if (pre) pre.classList.add('loaded');
-    }, 650);
-  });
-
-  // Magnetic buttons + ripple click
-  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.25) + 'px)';
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-    btn.addEventListener('click', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const ripple = document.createElement('span');
-      ripple.className = 'btn-ripple';
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-      btn.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
     });
   });
 </script>
